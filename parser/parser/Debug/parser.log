@@ -1,0 +1,5 @@
+﻿  pch.cpp
+  parser.cpp
+d:\daniel\hbo-ict\jaar 2\p3. chatbot\team12\parser\parser\parser.cpp(103): warning C4129: 's': unrecognized character escape sequence
+d:\daniel\hbo-ict\jaar 2\p3. chatbot\team12\parser\parser\parser.cpp(103): warning C4129: 'w': unrecognized character escape sequence
+  parser.vcxproj -> D:\Daniel\HBO-ICT\Jaar 2\P3. ChatBot\team12\parser\Debug\parser.exe

@@ -6,11 +6,62 @@
 #include <regex>
 #include <string>
 
-void ParseMovies(std::string str, std::regex title, std::regex suspended, std::regex episode, std::regex epYear, std::regex type) {
-	// This holds the first match
-	std::sregex_iterator matchTitle(str.begin(),
-		str.end(), title);
+const std::string Semicolon = ";";
 
+void ParseMovies(std::string str, std::regex line) {
+
+		// This holds the first match
+		std::sregex_iterator currentMatch(str.begin(),
+			str.end(), line);
+
+		// Used to determine if there are any more matches
+		std::sregex_iterator lastMatch;
+
+				//Title+ReleaseYearZ
+		std::regex title("\\\"?((.+)\\\"|.+)\\s(\\((\\d{4})|\\([?]{4})");
+		std::string pTitle;
+		std::string pReleaseYear;
+
+		// This holds the first match		
+
+		// While the current match doesn't equal the last
+		while (currentMatch != lastMatch) {
+			std::smatch match = *currentMatch;
+			match.str(1).replace(str.find(Semicolon), Semicolon.length(), ":");
+
+				//Title+ReleaseYear
+			std::sregex_iterator matchTitle(match.str(1).begin(),
+				match.str(1).end(), title);
+
+			while (matchTitle != lastMatch) {
+				std::smatch Title = *matchTitle;
+
+				if (Title.str() != "") {
+					if (Title.str(2) == "") { pTitle = Title.str(1) + ";"; }
+					else { pTitle = Title.str(2) + ";"; }
+
+					if (Title.str(4) != "") { pReleaseYear = Title.str(4) + ";"; }
+					else { pReleaseYear = "Unknown;"; }
+				}
+			}
+			std::string csvCode = pTitle + pReleaseYear +"\n";
+
+			std::cout << csvCode;
+			currentMatch++;
+		}
+		std::cout << std::endl;
+
+	while (std::regex_search(str, matches, reg)) {
+
+		//ParseMovies(matches.str(1), title, SUSPENDED, episode, episodeYear, type);
+
+		// eliminate the previous match and create
+		// a new string to search
+		str = matches.suffix().str();
+
+		std::cout << "\n";
+	}
+	
 	std::sregex_iterator matchSuspended(str.begin(),
 		str.end(), suspended);
 
@@ -23,38 +74,35 @@ void ParseMovies(std::string str, std::regex title, std::regex suspended, std::r
 	std::sregex_iterator matchType(str.begin(),
 		str.end(), type);
 
-	// Used to determine if there are any more matches
-	std::sregex_iterator lastMatch;
 
 	// While the current match doesn't equal the last
 	while (matchTitle != lastMatch) {
-		std::smatch Title = *matchTitle;
 		std::smatch Suspended = *matchSuspended;
 		std::smatch Episode = *matchEpisode;
 		std::smatch EpYear = *matchEpYear;
+		std::smatch Type = *matchType;
 		
-		std::string pTitle;
-		std::string pReleaseYear;
 		std::string pSeason;
 		std::string pEpisode;
 		std::string pEpName;
 		std::string pEpYear;
-		//std::string pYears;
+		std::string pType;
 
-		if (Title.str() != "") {
-			if (Title.str(2) == "") { pTitle = Title.str(1) + ";"; }
-			else {  pTitle = Title.str(2) + ";"; }
-
-			if (Title.str(4) != "") { pReleaseYear = Title.str(4) + ";"; }
-			else { pReleaseYear = "Unknown;"; }
-		
-		}if (Episode.str() != "") {
+		if (Episode.str(1) != "") {
 			if (Episode.str(1) != "") {pEpName = Episode.str(1) + ";";}
 			pSeason = Episode.str(2) + ";";
 			pEpisode = Episode.str(3) + ";";
 		}if (EpYear.str() != "") {pEpYear = EpYear.str(1) + ";";}
+		if (Type.str() != "") {
+			if (Type.str(1) == "VG") { pType = "Video Game;"; }
+			else if (Type.str(1) == "V") { pType = "Video;"; }
+			else if (Type.str(1) == "TV") { pType = "TV Show;"; }
+		}
 
-		if (++matchTitle == lastMatch) {
+		
+		matchTitle++;
+
+		if (matchTitle == lastMatch) {
 			std::string csvCode = pTitle + pReleaseYear + pEpName + pSeason + pEpisode + pEpYear;
 			std::cout << csvCode << std::endl;
 		}
@@ -64,17 +112,16 @@ void ParseMovies(std::string str, std::regex title, std::regex suspended, std::r
 
 void PrintMatches(std::string str, std::regex reg) {
 	std::smatch matches;
-	const std::string Semicolon = ";";
+
+	std::regex SUSPENDED("\\{\\{SUSPENDED\\}\\}");
+	std::regex episode("\\{(.+)?\\(\\#(\\d{1,4}).(\\d{1,5})\\)\\}");
+	std::regex episodeYear("[^(]\\s(([\\d]{4})-?([\\d]{4})?)\\s?\\n");
+	std::regex type("\\((TV|V|VG)\\)");
 
 	while (std::regex_search(str, matches, reg)) {
-		std::regex title("\\\"?((.+)\\\"|.+)\\s(\\((\\d{4})|\\(([?]{4}))");
-		std::regex SUSPENDED("\\{\\{SUSPENDED\\}\\}");
-		std::regex episode("\\{(.+)?\\(\\#(\\d{1,4}).(\\d{1,5})\\)\\}");
-		std::regex episodeYear("[^(]\\s(([\\d]{4})-?([\\d]{4})?)\\s?\\n");
-		std::regex type("\\((TV|V|VG)\\)");
 
 		matches.str(1).replace(str.find(Semicolon), Semicolon.length(), ":");
-		ParseMovies(matches.str(1), title, SUSPENDED, episode, episodeYear, type);
+		//ParseMovies(matches.str(1), title, SUSPENDED, episode, episodeYear, type);
 
 		// eliminate the previous match and create
 		// a new string to search
@@ -97,7 +144,7 @@ void PrintMatches2(std::string str,
 	// While the current match doesn't equal the last
 	while (currentMatch != lastMatch) {
 		std::smatch match = *currentMatch;
-		std::cout << match.str(1) << "\n";
+		std::cout << match.str() << "\n";
 		currentMatch++;
 	}
 	std::cout << std::endl;
@@ -105,12 +152,10 @@ void PrintMatches2(std::string str,
 
 
 int main(){
-	std::string str = "\"!Next?\" (1994) (TV)	{{SUSPENDED}}					1994-1995\n\"'t Zonnetje in huis\" (????) {Val es effe lekker dood (9.8)}	2003\nCommandment Keeper Church, Beaufort South Carolina, May 1940 (1940)	1940 \n";
+	std::string str = "\"!Next?\" (1994) (TV)	{{SUSPENDED}}					1994-1995\n\"'t Zonnetje; in huis\" (????) {Val es effe lekker dood (9.8)}	2003\nCommandment Keeper Church, Beaufort South Carolina, May 1940 (1940)	1940 \n";
 	std::regex line("(.+)\n");
 
-	PrintMatches(str, line);
-
-	//std::regex reg("\"[\\w!?]{1,50}\" ([\\d]{4})[\\s][\\d]{4}-?[\\d]{4}?");
+	ParseMovies(str, line);
 }
 
 
