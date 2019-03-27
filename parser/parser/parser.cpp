@@ -25,7 +25,7 @@ std::string Type = "\\((TV|V|VG)\\)";
 std::string Suspended = "\\{\\{SUSPENDED\\}\\}";
 std::string Episode = "\\{(.+)?\\(\\#(\\d{1,4}).(\\d{1,5})\\)\\}";
 std::string Year = "\\t(\\d{4}|[?]{4})(-(\\d{4}|[?]{4}))?";
-std::string Country = "\s(\w+)\n";
+std::string Country = "\\t((\\w+[-.]?)\\s?){1,5}\\n";
 std::string Actors = "(.+)  \\s?(\\\"?((.+)\\\"|.+)\\s(\\((\\d{4})|\\([?]{4}))(\\S+)?\\)\\s?\\s?(\\{.+\\})?(\\(.+\\))?(\\s{0,4})?(\\[.+\\])?\\s?";
 std::string ReleaseDate = "\\t(\\w+):(\\w+\\s\\d{4}|\\d{1,2}\\s\\w+\\s\\d{4}|\\d{4})(\\t(\\(.+\\)))?";
 std::string Genre = "\\t(\\s+)";
@@ -67,39 +67,39 @@ int main() {
 	switch (actresses)
 	{
 	case actresses:
-		inputFileName = "actresses.list"; //input actresses
-		outputFileName = "actors.csv"; //output actresses
-		expressionList = { Actors }; //actresses
+		inputFileName = "actresses.list"; //input
+		outputFileName = "actresses.csv"; //output
+		expressionList = { Actors };
 		break;
 	case actors:
-		inputFileName = "actors.list"; //input actors
-		outputFileName = "actors.csv"; //output actors
+		inputFileName = "actors.list"; 
+		outputFileName = "actors.csv"; 
 		expressionList = { Actors };
 		break;
 	case movies:
-		inputFileName = "movies.list"; //input movies
-		outputFileName = "movies.csv"; //output movies
-		expressionList = { Title,Type,Suspended,Episode,Year }; //movies
+		inputFileName = "movies.list"; 
+		outputFileName = "movies.csv"; 
+		expressionList = { Title,Type,Suspended,Episode,Year }; 
 		break;
 	case countries:
-		inputFileName = "countries.list"; //input countries
-		outputFileName = "countries.csv"; //output countries
-		expressionList = { Title,Episode,Country }; //countries
+		inputFileName = "countries.list"; 
+		outputFileName = "countries.csv"; 
+		expressionList = { Title,Type,Episode,Country };
 		break;
 	case genres:
-		inputFileName = "genres.list"; //input genres
-		outputFileName = "genres.csv"; //output genres
-		expressionList = { Title,Type,Suspended,Episode,Genre }; //genres
+		inputFileName = "genres.list"; 
+		outputFileName = "genres.csv"; 
+		expressionList = { Title,Type,Suspended,Episode,Genre }; 
 		break;
 	case releasedates :
-		inputFileName = "release-dates.list"; //input genres
-		outputFileName = "release-dates.csv"; //output genres
+		inputFileName = "release-dates.list"; 
+		outputFileName = "release-dates.csv"; 
 		expressionList = { Title,Type,Suspended,Episode,ReleaseDate };
 		break;
 	case ratings:
-		inputFileName = "ratings.list"; //input genres
-		outputFileName = "ratings.csv"; //output genres
-		expressionList = { Title,Type,Suspended,Episode,ReleaseDate };
+		inputFileName = "ratings.list"; 
+		outputFileName = "ratings.csv"; 
+		expressionList = { Rating };
 		break;
 	default:
 		break;
@@ -179,6 +179,9 @@ int main() {
 							output += match.str(1)+ match.str(2) + seperator;
 						}
 						break;
+					case eCountry:
+						output += match.str(1) + seperator;
+						break;
 					case eActors:
 						if (match.str(1) != "") {
 							name = match.str(1);
@@ -227,13 +230,12 @@ int main() {
 					}
 				else
 					output += "NULL" + seperator;
-
 			}
-
 			//STRING COUNT
 			if (stringCount(output, "NULL") != expressionList.size()) { //if output only contains null => skip
 				outputFile << output << endl;
 			}
+			std::cout << output << endl;
 		}
 	}
 

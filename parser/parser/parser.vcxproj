@@ -163,7 +163,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\movies.list" />
+    <None Include="movies.list" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

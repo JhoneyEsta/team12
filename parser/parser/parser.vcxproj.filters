@@ -28,8 +28,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\movies.list">
-      <Filter>Source Files</Filter>
+    <None Include="movies.list">
+      <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
 </Project>
