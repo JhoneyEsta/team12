@@ -12,9 +12,7 @@
 #include <deque>
 #include <algorithm>
 
-using namespace std;
-
-string uiOutput(string inputFileName, string outputFileName, int totalLineCount, int lineCount, int percentage);
+std::string uiOutput(std::string inputFileName, std::string outputFileName, int totalLineCount, int lineCount, int percentage);
 size_t stringCount(const std::string& referenceString, const std::string& subString);
 
 #pragma region RegEx_Strings
@@ -47,63 +45,63 @@ NamesRegex CheckRegex(std::string const& inString) {
 #pragma endregion RegEx_Strings
 
 int main() {
-	string inputFileName;
-	string outputFileName;
+	std::string inputFileName;
+	std::string outputFileName;
 
-	ifstream file(inputFileName);
-	ifstream totalLineCountFile(inputFileName);
-	ofstream outputFile(outputFileName);
-
-	string line;
-	smatch match;
-	string seperator = "; ";
-
-	list<string> expressionList;
+	std::list<std::string> regexList;
 
 	//enum with output choices
 	enum outputFilename { actresses, actors, movies, countries, genres, releasedates, ratings};
-
-	//ratings
-	switch (actresses)
+//							0			1		2		3			4		5
+	switch (4)
 	{
 	case actresses:
 		inputFileName = "actresses.list"; //input
 		outputFileName = "actresses.csv"; //output
-		expressionList = { Actors };
+		regexList = { Actors };
+
 		break;
 	case actors:
 		inputFileName = "actors.list"; 
 		outputFileName = "actors.csv"; 
-		expressionList = { Actors };
+		regexList = { Actors };
 		break;
 	case movies:
 		inputFileName = "movies.list"; 
 		outputFileName = "movies.csv"; 
-		expressionList = { Title,Type,Suspended,Episode,Year }; 
+		regexList = { Title,Type,Suspended,Episode,Year }; 
 		break;
 	case countries:
 		inputFileName = "countries.list"; 
 		outputFileName = "countries.csv"; 
-		expressionList = { Title,Type,Episode,Country };
+		regexList = { Title,Type,Episode,Country };
 		break;
 	case genres:
 		inputFileName = "genres.list"; 
 		outputFileName = "genres.csv"; 
-		expressionList = { Title,Type,Suspended,Episode,Genre }; 
+		regexList = { Title,Type,Suspended,Episode,Genre }; 
 		break;
 	case releasedates :
 		inputFileName = "release-dates.list"; 
 		outputFileName = "release-dates.csv"; 
-		expressionList = { Title,Type,Suspended,Episode,ReleaseDate };
+		regexList = { Title,Type,Suspended,Episode,ReleaseDate };
 		break;
 	case ratings:
 		inputFileName = "ratings.list"; 
 		outputFileName = "ratings.csv"; 
-		expressionList = { Rating };
+		regexList = { Rating };
 		break;
 	default:
 		break;
 	}
+
+	std::ifstream file(inputFileName);
+	std::ifstream totalLineCountFile(inputFileName);
+	std::ofstream outputFile(outputFileName);
+
+	std::string line;
+	std::smatch match;
+	std::string seperator = "; ";
 
 	//main
 	int lineCount = 0;
@@ -120,14 +118,14 @@ int main() {
 			if (percentage != lastPercentage) {
 				lastPercentage = percentage;
 				system("cls");
-				cout << uiOutput(inputFileName, outputFileName, totalLineCount, lineCount, percentage);
+				std::cout << uiOutput(inputFileName, outputFileName, totalLineCount, lineCount, percentage);
 			}
 
 			//REGEX
-			string output = "";
+			std::string output = "";
 			std::string name;
-			for (auto exp : expressionList) { //foreach expression in expression list => apply expression on line
-				if (regex_search(line, match, regex(exp)))
+			for (auto exp : regexList) { //foreach expression in expression list => apply expression on line
+				if (regex_search(line, match, std::regex(exp)))
 
 					switch (CheckRegex(exp))
 					{
@@ -232,10 +230,10 @@ int main() {
 					output += "NULL" + seperator;
 			}
 			//STRING COUNT
-			if (stringCount(output, "NULL") != expressionList.size()) { //if output only contains null => skip
-				outputFile << output << endl;
+			if (stringCount(output, "NULL") != regexList.size()) { //if output only contains null => skip
+				outputFile << output << std::endl;
 			}
-			std::cout << output << endl;
+			std::cout << output << std::endl;
 		}
 	}
 
@@ -259,9 +257,9 @@ size_t stringCount(const std::string& referenceString, const std::string& subStr
 
 //generates the output for the UI.
 //Displays the current file, outputfile, total amount of lines, Current line, percentage
-string uiOutput(string inputFileName, string outputFileName, int totalLineCount, int lineCount, int percentage) {
-	string output = "File name:		" + inputFileName + "\nOutput file:		" + outputFileName + "\n\nAmount of lines:	" + to_string(totalLineCount) + "\nCurrent line:		" + to_string(lineCount) + "\n\n";
-	output += to_string(percentage) + "%\n";
+std::string uiOutput(std::string inputFileName, std::string outputFileName, int totalLineCount, int lineCount, int percentage) {
+	std::string output = "File name:		" + inputFileName + "\nOutput file:		" + outputFileName + "\n\nAmount of lines:	" + std::to_string(totalLineCount) + "\nCurrent line:		" + std::to_string(lineCount) + "\n\n";
+	output += std::to_string(percentage) + "%\n";
 	output += "[";
 	for (int i = 0; i < 50; i++) {
 		if (i < percentage / 2) output += '=';
