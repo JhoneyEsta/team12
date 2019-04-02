@@ -187,7 +187,7 @@ int main() {
 							output += name + seperator;
 						}
 						else {
-							std::cout << name << "\n";
+							output += name + seperator;
 						}
 
 						if (match.str(4) != "") {
@@ -197,16 +197,10 @@ int main() {
 							output += match.str(3) + seperator;
 						}
 
-						output += match.str(6) + seperator;
-						if(match.str(7)!="") {
-							output += match.str(8) + seperator;
-							output += match.str(9) + seperator;
-							output += match.str(11) + seperator;
+						if (match.str(6) != "") {
+							output += match.str(6) + seperator;
 						}
-						else {
-							for (int i = 0; i < 3; i++)
-								output += "NULL" + seperator;
-						}
+
 						if (match.str(8) != "") {
 							output += match.str(8) + seperator;
 						}
@@ -215,8 +209,8 @@ int main() {
 							output += match.str(9) + seperator;
 						}
 
-						if (match.str(11) != "") {
-							output += match.str(11) + seperator;
+						if (match.str(10) != "") {
+							output += match.str(10) + seperator;
 						}
 						break;
 					case eGenre:
