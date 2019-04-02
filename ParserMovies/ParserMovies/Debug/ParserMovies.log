@@ -1,2 +1,8 @@
-﻿  ParserMovies.cpp
-  ParserMovies.vcxproj -> D:\Daniel\HBO-ICT\Jaar 2\P3. ChatBot\team12\ParserMovies\Debug\ParserMovies.exe
+﻿  pch.cpp
+  ParserMovies.cpp
+d:\users\dvanb\desktop\year 2\p3\project\team12\parsermovies\parsermovies\parsermovies.cpp(32): warning C4129: '(': unrecognized character escape sequence
+d:\users\dvanb\desktop\year 2\p3\project\team12\parsermovies\parsermovies\parsermovies.cpp(32): warning C4129: ')': unrecognized character escape sequence
+d:\users\dvanb\desktop\year 2\p3\project\team12\parsermovies\parsermovies\parsermovies.cpp(32): warning C4129: '{': unrecognized character escape sequence
+d:\users\dvanb\desktop\year 2\p3\project\team12\parsermovies\parsermovies\parsermovies.cpp(32): warning C4129: '}': unrecognized character escape sequence
+  LINK : D:\Users\dvanb\Desktop\Year 2\P3\Project\team12\ParserMovies\Debug\ParserMovies.exe not found or not built by the last incremental link; performing full link
+  ParserMovies.vcxproj -> D:\Users\dvanb\Desktop\Year 2\P3\Project\team12\ParserMovies\Debug\ParserMovies.exe

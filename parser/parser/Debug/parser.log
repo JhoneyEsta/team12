@@ -1,3 +1,3 @@
 ﻿  parser.cpp
-d:\daniel\hbo-ict\jaar 2\p3. chatbot\team12\parser\parser\parser.cpp(43): warning C4715: 'CheckRegex': not all control paths return a value
-  parser.vcxproj -> D:\Daniel\HBO-ICT\Jaar 2\P3. ChatBot\team12\parser\Debug\parser.exe
+d:\users\dvanb\desktop\year 2\p3\project\team12\parser\parser\parser.cpp(43): warning C4715: 'CheckRegex': not all control paths return a value
+  parser.vcxproj -> D:\Users\dvanb\Desktop\Year 2\P3\Project\team12\parser\Debug\parser.exe

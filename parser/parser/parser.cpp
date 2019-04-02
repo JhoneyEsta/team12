@@ -53,7 +53,7 @@ int main() {
 	//enum with output choices
 	enum outputFilename { actresses, actors, movies, countries, genres, releasedates, ratings};
 //							0			1		2		3			4		5
-	switch (4)
+	switch (3)
 	{
 	case actresses:
 		inputFileName = "actresses.list"; //input
@@ -164,6 +164,7 @@ int main() {
 						break;
 					case eEpisode:
 						if (match.str(1) != "") {
+
 							if (match.str(1) != "") { output += match.str(1) + seperator; }
 							output += match.str(2) + seperator;
 							output += match.str(3) + seperator;
@@ -212,7 +213,7 @@ int main() {
 						break;
 					case eGenre:
 						if (match.str() != "") {
-							output += match.str(1) + seperator;
+							output += match.suffix().str() + seperator;
 						}
 						break;
 					case eReleaseDate:
