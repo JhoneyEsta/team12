@@ -29,7 +29,7 @@ void PrintMatches2(std::string str,
 
 
 int main(){
-	std::string str = "\"#15SecondScare\" \(2015\) \{ Who Wants to Play with the Rabbit ? \(#1.2\) \}	USA\n";
+	std::string str = "\"!Next?\" \(1994\)						Italy\n";
 	std::regex line("\\t((\\w+[-.]?)\\s?){1,5}\\n");
 
 	PrintMatches2(str, line);

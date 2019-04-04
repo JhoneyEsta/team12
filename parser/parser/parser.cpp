@@ -23,10 +23,10 @@ std::string Type = "\\((TV|V|VG)\\)";
 std::string Suspended = "\\{\\{SUSPENDED\\}\\}";
 std::string Episode = "\\{(.+)?\\(\\#(\\d{1,4}).(\\d{1,5})\\)\\}";
 std::string Year = "\\t(\\d{4}|[?]{4})(-(\\d{4}|[?]{4}))?";
-std::string Country = "\\t((\\w+[-.]?)\\s?){1,5}\\n";
-std::string Actors = "(.+)  \\s?(\\\"?((.+)\\\"|.+)\\s(\\((\\d{4})|\\([?]{4}))(\\S+)?\\)\\s?\\s?(\\{.+\\})?(\\(.+\\))?(\\s{0,4})?(\\[.+\\])?\\s?";
+std::string Country = "\\t(\\S+(\\s\\S+(\\s\\S+(\\s\\S+)?)?)?)$";
+std::string Actors = "(.+)\\t(\\\"?((.+)\\\"|.+)\\s(\\((\\d{4})|\\([?]{4}))\\)\\s?\\s?(\\{.+\\})?\\s?\\s?(\\(.+\\))?(\\s{0,4})?(\\[.+\\])?\\s?";
 std::string ReleaseDate = "\\t(\\w+):(\\w+\\s\\d{4}|\\d{1,2}\\s\\w+\\s\\d{4}|\\d{4})(\\t(\\(.+\\)))?";
-std::string Genre = "\\t(\\s+)";
+std::string Genre = "\\t(\\S+)";
 std::string Rating = "(\\s+)?(\\S+)\\s+(\\S+)\\s+(\\S+)\\s+(.+)\\((\\d+)\\)";
 
 NamesRegex CheckRegex(std::string const& inString) {
@@ -74,7 +74,8 @@ int main() {
 	case countries:
 		inputFileName = "countries.list"; 
 		outputFileName = "countries.csv"; 
-		regexList = { Title,Type,Episode,Country };
+		regexList = { Title,Type,Suspended,Episode,Country };
+		//regexList = { Country };
 		break;
 	case genres:
 		inputFileName = "genres.list"; 
@@ -102,6 +103,7 @@ int main() {
 	std::string line;
 	std::smatch match;
 	std::string seperator = "; ";
+	std::string name;
 
 	//main
 	int lineCount = 0;
@@ -123,11 +125,11 @@ int main() {
 
 			//REGEX
 			std::string output = "";
-			std::string name;
-			for (auto exp : regexList) { //foreach expression in expression list => apply expression on line
-				if (regex_search(line, match, std::regex(exp)))
+			//std::string name;
+			for (auto regX : regexList) { //foreach expression in expression list => apply expression on line
+				if (regex_search(line, match, std::regex(regX)))
 
-					switch (CheckRegex(exp))
+					switch (CheckRegex(regX))
 					{
 					case eRating:
 						if (match.str() != "") {
@@ -139,18 +141,19 @@ int main() {
 						}
 						break;
 					case eTitle:
-						if (match.str() != "") {
-							if (match.str(2) != "") { output += match.str(2) + seperator;}
-							else { output += match.str(1) + seperator; }
+						if (match.str(2) != "") { output += match.str(2) + seperator; }
+						else { output += match.str(1) + seperator; }
 
-							if (match.str(6) != "") {
-								if (match.str(5) != "") {
-									output += match.str(4) + seperator;
-								}
-								else { output += match.str(5) + seperator; }
-							}
-							else { output += "Unknown" + seperator; }
+						if (match.str(6) != "") {
+							output += match.str(6) + seperator;
 						}
+						else if (match.str(5) != "") {
+							output += match.str(5) + seperator;
+						}
+						else if (match.str(4) != "") {
+							output += match.str(4) + seperator;
+						}
+						else { output += "Unknown" + seperator; }
 						break;
 					case eType:
 						if (match.str() != "") {
@@ -160,15 +163,14 @@ int main() {
 						}
 						break;
 					case eSuspended:
-						if (match.str() != "") { output += match.str() + seperator; }
+						output += "Suspended" + seperator;
 						break;
 					case eEpisode:
 						if (match.str(1) != "") {
-
-							if (match.str(1) != "") { output += match.str(1) + seperator; }
+							output += match.str(1) + seperator;
 							output += match.str(2) + seperator;
 							output += match.str(3) + seperator;
-						}if (match.str() != "") { output += match.str(1) + seperator; }		
+						}
 						break;
 					case eYear:
 						if (match.str(2) != "") {
@@ -182,12 +184,12 @@ int main() {
 						output += match.str(1) + seperator;
 						break;
 					case eActors:
-						if (match.str(1) != "") {
+						if (match.str(1) != "\t\t") {
 							name = match.str(1);
 							output += name + seperator;
 						}
 						else {
-							std::cout << name << "\n";
+							output += name + seperator;
 						}
 
 						if (match.str(4) != "") {
@@ -197,23 +199,29 @@ int main() {
 							output += match.str(3) + seperator;
 						}
 
-						output += match.str(6) + seperator;
+						if (match.str(6) != "") {
+							output += match.str(6) + seperator;
+						}
+						else { output += "NULL" + seperator; }
+
+						if (match.str(7) != "") {
+							output += match.str(7) + seperator;
+						}
+						else { output += "NULL" + seperator; }
 
 						if (match.str(8) != "") {
 							output += match.str(8) + seperator;
 						}
+						else { output += "NULL" + seperator; }
 
-						if (match.str(9) != "") {
-							output += match.str(9) + seperator;
+						if (match.str(10) != "") {
+							output += match.str(10) + seperator;
 						}
-
-						if (match.str(11) != "") {
-							output += match.str(11) + seperator;
-						}
+						else { output += "NULL" + seperator; }
 						break;
 					case eGenre:
 						if (match.str() != "") {
-							output += match.suffix().str() + seperator;
+							output += match.str(1) + seperator;
 						}
 						break;
 					case eReleaseDate:
@@ -228,12 +236,14 @@ int main() {
 						break;
 					}
 				else
-					output += "NULL" + seperator;
+					if (CheckRegex(regX) == eEpisode)
+						for (int i = 0; i < 3; i++)
+							output += "NULL" + seperator;
+					else
+						output += "NULL" + seperator;
 			}
 			//STRING COUNT
-			if (stringCount(output, "NULL") != regexList.size()) { //if output only contains null => skip
-				outputFile << output << std::endl;
-			}
+			outputFile << output << std::endl;
 			std::cout << output << std::endl;
 		}
 	}
