@@ -21,7 +21,7 @@ enum NamesRegex { eTitle, eType, eSuspended, eEpisode, eYear, eCountry, eActors,
 std::string Title = "\\\"?((.+)\\\"|.+)\\s(\\((\\d{4})|\\([?]{4}|\\((\\d{4}\\/[IVX]{1,7}))\\)";
 std::string Type = "\\((TV|V|VG)\\)";
 std::string Suspended = "\\{\\{SUSPENDED\\}\\}";
-std::string Episode = "\\{(.+)?\\((\\#(\\d{1,4}).(\\d{1,5})|(\\d{1,4})\\-(\\d{1,2})\\-(\\d{1,4}))\\)\\}";
+std::string Episode = "\\{(.+)?\\((\\#(\\d{1,4}).(\\d{1,5})|\\d{1,4}\\-\\d{1,2}\\-\\d{1,4})\\)\\}";
 std::string Year = "\\t(\\d{4}|[?]{4})(-(\\d{4}|[?]{4}))?";
 std::string Country = "\\t(\\S+(\\s\\S+(\\s\\S+)?)?)\\n";
 std::string Actors = "(.+)\\t(\\\"?((.+)\\\"|.+)\\s(\\((\\d{4})|\\([?]{4}))\\)\\s?\\s?(\\{.+\\})?\\s?\\s?(\\(.+\\))?(\\s{0,4})?(\\[.+\\])?\\s?"; 
@@ -167,8 +167,11 @@ int main() {
 								output += match.str(1) + seperator;
 							else
 								output += "NULL" + seperator;
-							output += match.str(2) + seperator;
-							output += match.str(3) + seperator;
+							if (match.str(3) != "") {
+								output += match.str(3) + seperator;
+								output += match.str(4) + seperator;
+							}else
+								output += match.str(2) + seperator;
 						}
 						break;
 					case eYear:
