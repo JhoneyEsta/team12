@@ -1,7 +1,7 @@
 ﻿  parser.cpp
   Generating code
-  1 of 1108 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  29 of 1116 functions ( 2.6%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   parser.vcxproj -> D:\Daniel\HBO-ICT\Jaar 2\P3. ChatBot\team12\parser\x64\Release\parser.exe
