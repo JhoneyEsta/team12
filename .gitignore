@@ -3,3 +3,17 @@
 ################################################################################
 
 /parser/.vs/parser/v15/Browse.VC.opendb
+parser/parser/release-dates.list
+parser/parser/ratings.list
+parser/parser/ratings.csv
+parser/parser/movies.list.old
+parser/parser/movies.list
+parser/parser/genres.list
+parser/parser/countries.list
+parser/parser/countries.csv
+parser/parser/actresses.list
+parser/parser/actors.list
+parser/parser/actors.csv
+parser/.vs/parser/v15/ipch/f66ae77b0b775fb8.ipch
+parser/.vs/parser/v15/ipch/AutoPCH/a423f8fb36582970/NEW_SCALAR.ipch
+parser/.vs/parser/v15/Browse.VC.db
