@@ -1,11 +1,14 @@
 package events;
 
+import Subroutines.JdbcSubroutine;
+import Subroutines.SystemSubroutine;
 import com.rivescript.RiveScript;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;   //always extend ListenAdapter
+
 
 public class FullMessageEvent extends ListenerAdapter {
 
@@ -66,6 +69,8 @@ public class FullMessageEvent extends ListenerAdapter {
                     for(int i = 1; i < messageSent.length; i++){
                         messageReceived += messageSent[i] + " ";
                     }
+                    rivebot.setSubroutine("system", new SystemSubroutine());
+                    rivebot.setSubroutine("jdbc", new JdbcSubroutine());
                     rivebot.loadDirectory("resources/rivescript");
                     rivebot.sortReplies();
                     Response = rivebot.reply(String.valueOf(channel), messageReceived);

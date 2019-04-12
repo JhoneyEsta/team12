@@ -2,7 +2,6 @@ import events.FullMessageEvent;
 import events.onjoinEvent;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.events.guild.GuildJoinEvent;
 
 public class Main {
 
