@@ -1,118 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0692bdd0-fe2a-49c8-bc73-da57f3909cde" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/.vs/ParserMovies/v15/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/.vs/ParserMovies/v15/Browse.VC.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/.vs/ParserMovies/v15/ipch/74da8347e53f092c.ipch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/.vs/ParserMovies/v15/ipch/AutoPCH/46d86231f6df7659/PCH.ipch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/.vs/ParserMovies/v15/ipch/AutoPCH/b5457799934b61cd/EXE_COMMON.ipch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/.vs/ParserMovies/v15/ipch/AutoPCH/be108bd1215889db/EXE_COMMON.ipch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/.vs/ParserMovies/v15/ipch/c5f9c935b5620495.ipch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/Debug/ParserMovies.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/Debug/ParserMovies.ilk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/Debug/ParserMovies.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/ParserMovies.Build.CppClean.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/ParserMovies.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/ParserMovies.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/ParserMovies.pch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/ParserMovies.tlog/CL.command.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/ParserMovies.tlog/CL.read.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/ParserMovies.tlog/CL.write.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/ParserMovies.tlog/ParserMovies.lastbuildstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/ParserMovies.tlog/link.command.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/ParserMovies.tlog/link.read.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/ParserMovies.tlog/link.write.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/pch.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/vc141.idb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/Debug/vc141.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/ParserMovies.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/ParserMovies.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/ParserMovies.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/ParserMovies.vcxproj.user" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/pch.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/ParserMovies/pch.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParserMovies/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/events/FullMessageEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/events/HelloEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/events/onjoinEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/PrutserBot.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/FullMessageEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/HelloEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/events/onjoinEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/.vs/parser/v15/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/.vs/parser/v15/Browse.VC.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/.vs/parser/v15/ipch/56309c7c6ee08d21.ipch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/.vs/parser/v15/ipch/AutoPCH/130123ef44963ede/PARSER.ipch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/.vs/parser/v15/ipch/AutoPCH/494242d27b9de415/PARSER.ipch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/.vs/parser/v15/ipch/b22bc367bf0202b1.ipch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/.vs/parser/v15/ipch/f411443bdce5ce05.ipch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/Debug/parser.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/Debug/parser.ilk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/Debug/parser.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/parser.Build.CppClean.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/parser.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/parser.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/parser.pch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/parser.tlog/CL.command.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/parser.tlog/CL.read.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/parser.tlog/CL.write.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/parser.tlog/link.command.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/parser.tlog/link.read.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/parser.tlog/link.write.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/parser.tlog/parser.lastbuildstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/pch.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/vc141.idb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/Debug/vc141.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/parser.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/parser.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/parser.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/parser.vcxproj.user" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/pch.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/pch.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Debug/parser.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Debug/parser.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Debug/parser.pch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Debug/parser.tlog/CL.command.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Debug/parser.tlog/CL.read.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Debug/parser.tlog/CL.write.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Debug/parser.tlog/link.command.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Debug/parser.tlog/link.read.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Debug/parser.tlog/link.write.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Debug/parser.tlog/parser.lastbuildstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Debug/pch.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Debug/vc141.idb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Debug/vc141.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Release/parser.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Release/parser.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Release/parser.pch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Release/parser.tlog/CL.command.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Release/parser.tlog/CL.read.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Release/parser.tlog/CL.write.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Release/parser.tlog/link.command.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Release/parser.tlog/link.read.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Release/parser.tlog/link.write.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Release/parser.tlog/parser.lastbuildstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Release/parser.tlog/parser.write.1u.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Release/pch.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/parser/x64/Release/vc141.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/x64/Debug/parser.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/x64/Debug/parser.ilk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/x64/Debug/parser.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/x64/Release/parser.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/x64/Release/parser.iobj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/x64/Release/parser.ipdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser/x64/Release/parser.pdb" beforeDir="false" />
-    </list>
+    <list default="true" id="0692bdd0-fe2a-49c8-bc73-da57f3909cde" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -128,7 +17,60 @@
     <favorites_list name="PrutserBot" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/events/onjoinEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="27" selection-start-line="26" selection-start-column="1" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/events/HelloEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/events/FullMessageEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/rivescript/bot.rive">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-75" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" selection-start-line="17" selection-end-line="19" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -160,9 +102,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="984" />
-    <option name="width" value="943" />
-    <option name="height" value="1087" />
+    <option name="x" value="54" />
+    <option name="y" value="-8" />
+    <option name="width" value="1874" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -170,14 +113,35 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="PrutserBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PrutserBot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PrutserBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PrutserBot" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PrutserBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PrutserBot" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="rivescript" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -230,7 +194,7 @@
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Learn" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" weight="0.19128996" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.19128996" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.24972437" />
       <window_info id="Favorites" order="5" side_tool="true" weight="0.3296582" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49944875" weight="0.32917964" />
@@ -239,7 +203,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49889746" weight="0.32917964" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49944875" visible="true" weight="0.32917964" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49944875" weight="0.32917964" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.3997923" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -289,13 +253,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/target/classes/events/HelloEvent.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/analytics/rcaller.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/events/onjoinEvent.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/events/HelloEvent.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/events/FullMessageEvent.java" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="19" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/events/onjoinEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" selection-start-line="26" selection-start-column="1" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/rivescript/bot.rive">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/events/HelloEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/events/FullMessageEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

@@ -1,0 +1,52 @@
++ (hello|greetings|salutations|hi|hey)
+- Hey there, How can I help?
+
++ scotland
+- Forever!
+- The Brave!
+
++ tell me a joke
+- How many apples grow on a tree? All of them.
+- What do you call a Mexican who has lost his car? Carlos.
+- I don’t play soccer because I enjoy the sport. I’m just doing it for kicks.
+- I would avoid the sushi if I was you. It’s a little fishy.
+- What do you call a man with a rubber toe? Roberto.
+- My wife is really mad at the fact that I have no sense of direction. So I packed up my stuff and right.
+- How do you make holy water? You boil the hell out of it.
+- The secret service isn't allowed to yell "Get down!" anymore when the president is about to be attacked. Now they have to yell "Donald, duck!"
+- What is the least spoken language in the world? Sign language.
+- Why did the invisible man turn down the job offer? He couldn't see himself doing it.
+
++ which actor has the longest running career
+- Let me look that up for you, one moment...
+
++ which (actor|actress) plays in the worst rated movie
+- That would be ACTORNAME, in the movie MOVIENAME.
+
++ which movie has the highest score with the least votes
+- The movie with the highest score and least votes is MOVIENAME.
+
++ which movies does * play in?
+- The movies that <star1> plays in, are; MOVIENAMES
+
++ in which year between * and * are the most movies produced with the word * in the title
+- from <star1> to <star2>, the year with the most <star3> movies was MOVIEYEAR, with genre MOVIEGENRE
+
++ how many movies have played in *
+- In <star1>, MOVIENUM have played.
+
++ in which country have the fewest movies played
+- The country in which the fewest movies were played, is COUNTRYNAME
+
++ which (actor|actress) plays in the most movies
+- That would be ACTORNAME
+
++ which movies with (actor|actress) * have the best rating
+- The best rated movies with <star1> are MOVIES
+
++ which (actors|actresses) have only played in movies in the year *
+- For the year <star1>, that would be ACTORNAMES
+
++ [*]help[*]
+- Hey! It looks like you need help! You can ask me simple questions about movies, actors, ratings, etc. For example, "What is the best rated movie?"
+
