@@ -14,10 +14,11 @@ public class FullMessageEvent extends ListenerAdapter {
 
     RiveScript rivebot = new RiveScript();
 
+
+    @SuppressWarnings("CallToPrintStackTrace")
     public void onGuildMessageReceived(GuildMessageReceivedEvent event){
         String[] messageSent = event.getMessage().getContentRaw().split(" ");   //spilt on space
         String command = messageSent[1];
-
 
 
         User author = event.getAuthor();
@@ -31,6 +32,11 @@ public class FullMessageEvent extends ListenerAdapter {
         String Response = "";                               //allows
 
         boolean bot = author.isBot();                    //This boolean is useful to determine if the User that
+
+        rivebot.setSubroutine("jdbc", new JdbcSubroutine());
+        rivebot.setSubroutine("system", new SystemSubroutine());
+        rivebot.loadDirectory("resources/rivescript");
+        rivebot.sortReplies();
 
         String[] commands = {"Help", "Ping"};               //array of currently available commands
 
@@ -69,10 +75,6 @@ public class FullMessageEvent extends ListenerAdapter {
                     for(int i = 1; i < messageSent.length; i++){
                         messageReceived += messageSent[i] + " ";
                     }
-                    rivebot.setSubroutine("system", new SystemSubroutine());
-                    rivebot.setSubroutine("jdbc", new JdbcSubroutine());
-                    rivebot.loadDirectory("resources/rivescript");
-                    rivebot.sortReplies();
                     Response = rivebot.reply(String.valueOf(channel), messageReceived);
                     if (Response.equals("ERR: No Reply Matched")){
                         Response = "GPS satellites? Unmanned drones? Fucking laser sights? The more crutches you have, the more it hurts when they're kicked out from under ya. If there's one thing I know for sure, it's that a six inch blade never loses reception.";

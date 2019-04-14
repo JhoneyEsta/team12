@@ -13,18 +13,13 @@ import java.sql.SQLException;
  */
 public class JdbcSubroutine implements Subroutine {
 
-    //@Override
     public String call(com.rivescript.RiveScript rs, String[] args) {
-        String host = args[0];
-        String port = args[1];
-        String db = args[2];
-        String username = args[3];
-        String password = args[4];
         String sql = "";
         String result = "";
-        for (int i=5; i<args.length; i++) 
+        for (int i=0; i<args.length; i++)
             sql = sql + " " + args[i];
         sql = sql.trim();
+
 
         Connection connection = null;
         Statement statement = null;
@@ -32,9 +27,9 @@ public class JdbcSubroutine implements Subroutine {
 
         try {
             connection=(Connection) DriverManager.getConnection(
-                    "jdbc:mysql://" + host + ":" + port + "/" + db + "?autoReconnect=true&useSSL=false",
-                    username, password);
+                    "jdbc:mysql://127.0.0.1:3306/imdb", "root" , "");
             statement=(Statement) connection.createStatement();
+            //resultSet=statement.executeQuery("SELECT votes from ratings WHERE title = \"rag doll\" AND YEAR = \"1961\"");
             resultSet=statement.executeQuery(sql);
             while(resultSet.next()) {
                 int i = resultSet.getMetaData().getColumnCount();
@@ -57,7 +52,6 @@ public class JdbcSubroutine implements Subroutine {
             } catch (SQLException ex) {
             }
         }
-        
         return result;
     }
     
