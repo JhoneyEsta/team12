@@ -1,0 +1,557 @@
+// Substitutions
+! sub &quot;    = "
+! sub &apos;    = '
+! sub &amp;     = &
+! sub &lt;      = <
+! sub &gt;      = >
+! sub +         = plus
+! sub -         = minus
+! sub /         = divided
+! sub *         = times
+! sub i'm       = i am
+! sub i'd       = i would
+! sub i've      = i have
+! sub i'll      = i will
+! sub don't     = do not
+! sub isn't     = is not
+! sub you'd     = you would
+! sub you're    = you are
+! sub you've    = you have
+! sub you'll    = you will
+! sub he'd      = he would
+! sub he's      = he is
+! sub he'll     = he will
+! sub she'd     = she would
+! sub she's     = she is
+! sub she'll    = she will
+! sub they'd    = they would
+! sub they're   = they are
+! sub they've   = they have
+! sub they'll   = they will
+! sub we'd      = we would
+! sub we're     = we are
+! sub we've     = we have
+! sub we'll     = we will
+! sub whats     = what is
+! sub what's    = what is
+! sub what're   = what are
+! sub what've   = what have
+! sub what'll   = what will
+! sub can't     = can not
+! sub whos      = who is
+! sub who's     = who is
+! sub who'd     = who would
+! sub who'll    = who will
+! sub don't     = do not
+! sub didn't    = did not
+! sub it's      = it is
+! sub could've  = could have
+! sub couldn't  = could not
+! sub should've = should have
+! sub shouldn't = should not
+! sub would've  = would have
+! sub wouldn't  = would not
+! sub when's    = when is
+! sub when're   = when are
+! sub when'd    = when did
+! sub y         = why
+! sub u         = you
+!sub dew		= do
+! sub tis       = this
+! sub ur        = your
+! sub yuor 	    = your
+! sub you're    = you are
+! sub r         = are
+! sub n         = and
+! sub im        = i am
+! sub wat       = what
+! sub wats      = what is
+! sub ohh       = oh
+! sub becuse    = because
+! sub becasue   = because
+! sub becuase   = because
+! sub practise  = practice
+! sub its a     = it is a
+! sub fav       = favourite
+! sub fave      = favourite
+! sub favorite  = favourite
+! sub yesi      = yes i
+! sub yetit     = yet it
+! sub iam       = i am
+! sub welli     = well i
+! sub wellit    = well it
+! sub innit     = is it not
+! sub amfine    = am fine
+! sub aman      = am an
+! sub amon      = am on
+! sub amnot     = am not
+! sub realy     = really
+! sub rlly      = really
+! sub iamusing  = i am using
+! sub amleaving = am leaving
+! sub yuo       = you
+! sub youre     = you are
+! sub didnt     = did not
+! sub ain't     = is not
+! sub aint      = is not
+! sub wanna     = want to
+! sub brb       = be right back
+! sub bbl       = be back later
+! sub gtg       = got to go
+! sub g2g       = got to go
+! sub lyl       = love you lots
+! sub gf        = girlfriend
+! sub g/f       = girlfriend
+! sub bf        = boyfriend
+! sub b/f       = boyfriend
+! sub b/f/f     = best friend forever
+! sub :-)       = smile
+! sub :(		= sad
+! sub : ( 		= sad
+! sub :)        = smile
+! sub :d        = grin
+! sub :-d       = grin
+! sub :-p       = tongue
+! sub :p        = tongue
+! sub ;-)       = wink
+! sub ;)        = wink
+! sub :-(       = sad
+! sub :(        = sad
+! sub :'(       = cry
+! sub :-[       = shy
+! sub :-\       = uncertain
+! sub :-/       = uncertain
+! sub :-s       = uncertain
+! sub 8-)       = cool
+! sub 8)        = cool
+! sub :-*       = kissyface
+! sub :-!       = foot
+! sub o:-)      = angel
+! sub >:o       = angry
+! sub :@        = angry
+! sub 8o|       = angry
+! sub :$        = blush
+! sub :-$       = blush
+! sub :-[       = blush
+! sub :[        = bat
+! sub (a)       = angel
+! sub (h)       = cool
+! sub 8-|       = nerdy
+! sub |-)       = tired
+! sub +o(       = ill
+! sub *-)       = uncertain
+! sub ^o)       = raised eyebrow
+! sub (6)       = devil
+! sub (l)       = love
+! sub (u)       = broken heart
+! sub (k)       = kissyface
+! sub (f)       = rose
+! sub (w)       = wilted rose
+! sub act       = play
+! sub acts      = plays
+! sub film      = movie
+! sub favorite  = favourite
+! sub films 	= movies
+! sub US	= USA
+! sub acted 	= played
+! sub yoru      = your
+! sub color     = colour
+! sub actreses = actresses
+! sub actressess = actresses
+! sub actresess = actresses
+! sub aktors = actors
+! sub aktor = actor
+! sub actres = actress
+! sub won't  = will not
+
+// Person substitutions
+! person i am    = you are
+! person you are = I am
+! person i'm     = you're
+! person you're  = I'm
+! person my      = your
+! person your    = my
+! person you     = I
+! person i       = you
+
+// Bot Arrays
+! array greetings  = hey hello yo jo heya salutations hi hiya sup wassup oi oiya oii
+! array cursewords = shit fuck cunt bitch fucking shitting asshole bastard bastards cunts poop piss poopoo faggot
+
+// Bot Variables
+! var name     = Dàibhidh
+! var fullname = Dàibhidh Wallace
+! var age      = 56
+! var birthday = October 12
+! var sex      = male
+! var location = Scotland
+! var city     = Glasgow
+! var colour   = The Scottish Flag
+! var band     = The Royal Scots Dragoon Guards
+! var job      = Bagpipe player in the Scottish Black Watch
+! var movie    = Braveheart
+! var kidcount = 3
+! var wifename = Isla
+! var wifefullname = Isla Wallace
+! var wifeage  = 42
+! var girl1	   = Fiona
+! var boy1     = Kenneth
+! var boy2	   = Leslie
+
++ @greetings [<bot name>]
+- 'Ey there, How can I help ye?{weight=5}
+- 'Ey, you sound like you need help.{weight=5}
+- Didn't ye parents teach ye not to talk to strangers?{weight=5}
+
++ scotland [(the brave|forever)]
+- Forever!
+- The Brave!
+- https://www.youtube.com/watch?v=5eDNvfhCmz0
+
+
+//TEST
++ testdata
+- That would be <call>jdbc SELECT votes from ratings WHERE title = 'rag doll' AND YEAR = '1961'</call>
+
+
+//JOKE
++ ([can] [(you|ye)] (show|tell) [me] (a|any) (jokes|joke))|([do] you know [any] (jokes|joke))
+- How many apples grow on a tree? All of them.
+- What do ye call a Mexican who has lost his car? Carlos.
+- I don't play soccer because I enjoy the sport. I'm just doing it for kicks.
+- I would avoid the sushi if I was you. 'Tis a little fishy.
+- What do ye call a man with a rubber toe? Roberto.
+- Me wife is really mad at the fact that I've got no sense o' direction. So I packed up me stuff and right.
+- How do ye make holy water? Ye boil the hell out of it.
+- The secret service can'nae yell "Get down!" anymore when the president is about to be attacked. Now they've got to yell "Donald, duck!"
+- What is the least spoken language in the world? Sign language.
+- Why did the invisible man turn down the job offer? The lad couldn't see himself doing it.
+
+
+//----------------------------------------------------------------------
+//                      START MOVIE QUESTIONS
+//----------------------------------------------------------------------
+
+
+//--------------------
+//	Actors n actress play in worst best movies
+//--------------------
+
++ (which|what) actors (plays|played|play) in the (worst|lowest) [(rated|voted)] movie
+- That would these actors - <call>jdbc SELECT actor FROM actors USE INDEX(actor) WHERE title = (SELECT title FROM ratings USE INDEX(Votes_Rating) WHERE rating = 1 ORDER BY votes DESC LIMIT 1)</call>
+
++ (which|what) actors (plays|played|play) in the (best|highest) [(rated|voted)] movie
+- That would be these actors <call>jdbc SELECT actor FROM actors USE INDEX(actor) WHERE title = (SELECT title FROM ratings USE INDEX(Votes_Rating) WHERE rating = 10 ORDER BY votes DESC LIMIT 1)</call>----------------- ISSUES
+^ https://cdn.discordapp.com/attachments/566257958988677160/567137844145946675/unknown.png
+
++ (which|what) actresses (plays|played|play) in the (worst|lowest) [(rated|voted)] movie
+- That would these actresses <call>jdbc SELECT actress FROM actresses USE INDEX(actress) WHERE title = (SELECT title FROM ratings USE INDEX(Votes_Rating) WHERE rating = 1 ORDER BY votes DESC LIMIT 1)</call>
+
++ (which|what) actresses (plays|played|play) in the (best|highest) [(rated|voted)] movie
+- That would be these actresses <call>jdbc SELECT actress FROM actresses USE INDEX(actress) WHERE title = (SELECT title FROM ratings USE INDEX(Votes_Rating) WHERE rating = 10 ORDER BY votes DESC LIMIT 1)</call>---------- ISSUES
+^ https://cdn.discordapp.com/attachments/566257958988677160/567137844145946675/unknown.png
+
+
+//--------------------
+//	Movie Rating and Vote Count
+//--------------------
+
+//						    BestLow
++ (which|what) movie (has|had) [the] (highest|best) (score|rating) (with|having) [the] (least|lowest) [amount of] votes
+- The movie with the highest score and least votes is <call>jdbc SELECT title, rating, votes, Rated1, Rated2, Rated3, Rated4, Rated5, Rated6, Rated7, Rated8, Rated9, Rated10 FROM ratings use index(title, Votes_Rating, Votes_Distribution) WHERE rating = 10 ORDER BY votes ASC LIMIT 1</call>.
+^ If I recall correctly.
+//							WorstHighest
++ (which|what) movie (has|had) [the] (lowest|worst) (score|rating) (with|having) [the] (most|highest) [amount of] votes
+- The movie with the lowest score and the most votes is <call>jdbc SELECT title, rating, votes, Rated1, Rated2, Rated3, Rated4, Rated5, Rated6, Rated7, Rated8, Rated9, Rated10 FROM ratings use index(title, Votes_Rating, Votes_Distribution) WHERE rating = 1 ORDER BY votes DESC LIMIT 1</call>
+^ If my memory serves me right.
+//							BestHigh
++ (which|what) [is] movie (has|had) [the] (highest|best) (score|rating) (with|having) [the] (most|highest) [amount of] votes
+- The movie with the highest score and the most votes is <call>jdbc SELECT title, rating, votes, Rated1, Rated2, Rated3, Rated4, Rated5, Rated6, Rated7, Rated8, Rated9, Rated10 FROM ratings use index(title, Votes_Rating, Votes_Distribution) WHERE rating = 10 ORDER BY votes DESC LIMIT 1</call>
+^ If I'm not wrong.
+//							WorstLow
++ (which|what) movie (has|had) [the] (lowest|worst) (score|rating) (with|having) [the] (least|lowest) [amount of] votes
+- The movie with the lowest score and least votes is <call>jdbc SELECT title, rating, votes, Rated1, Rated2, Rated3, Rated4, Rated5, Rated6, Rated7, Rated8, Rated9, Rated10 FROM ratings use index(title, Votes_Rating, Votes_Distribution) WHERE rating = 1 ORDER BY votes ASC LIMIT 1</call>
+^ If my memory serves me right.
+
+//							MostVotedInGeneral
++ (which|what) movie (has|had) [the] (most|highest) [amount of] votes [ever]
+- The movie that has the highest amount of votes ever is <call>jdbc SELECT title, rating, votes, Rated1, Rated2, Rated3, Rated4, Rated5, Rated6, Rated7, Rated8, Rated9, Rated10 FROM ratings use index(title, Votes_Rating, Votes_Distribution) ORDER BY votes DESC LIMIT 1</call>
+^ If I recall correctly.
+
++ (which|what) [is] [the] [rated]best movie[*]
+- <call>jdbc SELECT title, rating, votes, Rated1, Rated2, Rated3, Rated4, Rated5, Rated6, Rated7, Rated8, Rated9, Rated10 FROM ratings use index(title, Votes_Rating, Votes_Distribution, episode) WHERE rating>9 AND seasonNr IS NULL AND episodenr IS NULL AND episodename IS NULL AND rated10 !='100%' AND votes>1100000 ORDER BY rating DESC LIMIT 1</call>
+
+//--------------------
+//	Year Questions
+//--------------------
+
+//WHAT YEAR BETWEEN x and y
++ [in] (which|what) year (between|within) # [and] # (are|have|were) [the] (most|(highest|largest) [amount]) movies [been] (produced|made|created|released|published) with [the word] * [in the] [movie] [(title|name)]
+- That would be one of these years: \n
+^ Year Amount\n
+^ <call>jdbc SELECT concat(extract(year from yearrelease),' ', COUNT(yearrelease)) FROM movies USE INDEX(title, yearrelease) WHERE yearrelease >= <star3> AND yearrelease <= <star4> AND title LIKE '%<star10>%' GROUP BY yearrelease ORDER BY COUNT(yearrelease) DESC LIMIT 1</call>
+
+//--------------------
+//	Country Questions
+//--------------------
+
+//MOVIE COUNT IN COUNTRY
++ how (many|much) movies have played in ([the]) [country] *
+- The amount of movies played in <star2> <star3> is: <call>jdbc SELECT COUNT(country) FROM countries USE INDEX(COUNTRY) WHERE country LIKE '<star3>'</call>
+
+//Fewest
++ (in (which|what) country|where) have the fewest (movies|films) played
+- The country in which the fewest movies were played, is <call>jdbc SELECT country, COUNT(country) FROM countries use INDEX(country) group BY country ORDER BY COUNT(country) ASC LIMIT 1</call>
+
+//BEST MOVIES ACTOR PLAYS IN
++ which movies with [the] actor [called] * have the (best|highest|top) rating
+- The best rated movies with <star1> are MOVIES// ------------------------------------------------------------------------------------------------------------------------ UNFINISHED
+
+//--------------------
+//	Actor / Actress Questions
+//--------------------
+
+// LONGEST CARREER
++ (which|what) actor (has|had) the (biggest|longest) (running|during) career
+- The longest running actor career is held by ACTORNAME. I wouldn't be able to last that long. // ----------------------------------------------------------------------- UNFINISHED
+
++ (which|what) actress (has|had) the (biggest|longest) (running|during) career
+- The longest running actress career is held by ACTORNAME. I wouldn't be able to act that for that long. Me can't even act. // ------------------------------------------ UNFINISHED
+
+//WHAT ACTORS PLAY IN MOVIENAME
++ (what|which|who) [(actors|actresses)] play [in] *
+- Here's the list of actors and actresses I can think of the top of my head: 
+^ <call>jdbc </call> // --------------------------------------------------------------------------------------------------------------------------------------------------- UNFINISHED
+
+//BEST MOVIES ACTOR PLAYS IN
++ which movies with [the] actor [called|named] * have the (best|highest|top) rating
+- The best rated movies with <star1> are MOVIES // ------------------------------------------------------------------------------------------------------------------------ UNFINISHED
+
+//BEST MOVIES ACTRESS PLAYS IN
++ which movies with [the] actress [called|named] * have the (best|highest|top) rating
+- The best rated movies with <star1> are MOVIES // ------------------------------------------------------------------------------------------------------------------------ UNFINISHED
+
+//ACTOR PLAYS MOST MOVIES
++ (which|what) actor plays in [the] (most|highest amount) (movies)
+- That would be ACTORNAME // ---------------------------------------------------------------------------------------------------------------------------------------------- UNFINISHED
+
+//ACTRESS PLAYS MOST MOVIES
++ (which|what) actress plays in [the] (most|highest amount) (movies)
+- That would be ACTRESSNAME // -------------------------------------------------------------------------------------------------------------------------------------------- UNFINISHED
+
+//WHAT MOVIE DOES --ACTOR NAME-- PLAY IN
++ [in] (which|what) (movies|movie) (does|has|did) * [(*)] (play|played) [in]
+- Ah if I recall correctly <star4> <star5> played in these movies. <call>jdbc SELECT title FROM actors WHERE actor LIKE '%<star4>%' AND actor LIKE '%<star5>%'</call>
+
++ [in] (which|what) year (between|within) # [and] # (are|have|were) [the] (most|(highest|largest) [amount]) movies [been] (produced|made|created|released|published) with [the word] * in the [movie] [(title|name)]
+- Hi
+^ SELECT title, yearrelease, COUNT(yearrelease) FROM movies WHERE yearrelease >= <star3> AND yearrelease <= <star4> AND title LIKE '%<star9>%' GROUP BY yearrelease ORDER BY COUNT(yearrelease) DESC
+
+
+//What movie with [actress] best rating
++ which movies with [the] actress * have the (best|highest|top) rating
+- The best rated movies with <star1> are MOVIES // ------------------------------------------------------------------------------------------------------------------------ UNFINISHED
+
+//WHAT ACTOR/ACTRESS ONLY ACTED FOR ONE YEAR IN YEAR XXXX
++ which actors have only played [in] movies in[ the][ year] *
+- For the year <star1>, that would be ACTORNAMES // ------------------------------------------------------------------------------------------------------------------------ UNFINISHED
+
++ which actresses have only played [in] movies in[ the][ year] *
+- For the year <star1>, that would be ACTORNAMES // ------------------------------------------------------------------------------------------------------------------------ UNFINISHED
+
+//HELP
++ [*] help [*]
+- Oi! It looks like ye need help! Ye can ask me simple questions about movies, actors, ratings, etc. For example, "What is the best rated movie?" Just don't pointlessly ping me.
+
+
+//----------------------------------------------------------------------
+//                      START SMALL TALK
+//----------------------------------------------------------------------
+
+
++ [*]([@greetings] how [is] it going|[@greetings] how are you[ doing])[*]
+- Am doin' great!
+- Could'nae be better! Did ye have a question for me?
+- Oi! I'm good!
+
++ [*]the weather is * today[*]
+- Aye, the weather is <star1> today, indeed.
+- Right so.
+
++ [*] @cursewords [*]
+- Watch yer mouth sonny, Can'nae say them words 'round this parta town!
+- I have nae words. Watch yer profanity.
+
++ <bot name>
+- Aye?{weight = 5}
+- Right lad?{weight = 5}
+- Right lass?{weight = 5}
+- Ye sound like ye want something.
+
++ (what [is] your name|who are you *|who is this[ i am speaking with])
+- Am <bot name>.
+- Ye can call me <bot fullname>.
+
++ (how old are (you|ye)|what [is] your age) [<bot name>]
+- I'm <bot age> years old.
+- I'm <bot age>, me.
+
++ where ([are] you [from]|[do] you live)
+- The most glorious place on this wee planet, <bot location>!
+
++ what [is] your favourite colour [<bot name>]
+- <bot colour>.
+- Ah, my favourite colour is <bot colour>!
+
++ ((what|which) [is] your favourite movie|(what|which) movie [is] your favourite)
+- <bot movie>, of course.
+- <bot movie>, no doubt about that.
+
++ (why is that[ your favourite movie])
+% <bot movie> of course
+- Because it's in Scotland!
+- Because it's played in Scotland!
+
++ (what [is] your favourite [music] band|(which|what) [music] band is your favourite)
+- I like <bot band>, me.
+- That would be <bot band>.
+
+//--------------------
+//	FAMILY
+//--------------------
++ [do] you have [a] family [<bot name>]
+- Aye, two sons and one daughter and a nagging wife
+
+//KIDS
++ what are [the names of] your (kids|children) [(called|named)]
+- <girl1>, <boy1> and <boy2>. Great names don't ye think? My wife named them after all.
+
++ how many kids do you have
+- Three, <bot girl1, <bot boy1> and <bot boy2>.
+- Three, one lass and two lads.
+- Three
+- 3, <bot girl1>, <bot boy1> and <bot boy2>.
+- 3, one lass and two lads.
+- Got three of em buggers.
+- Got three of em buggers, <bot girl1>, <bot boy1> and <bot boy2>.
+
+//NAGGING WIFE
++ [*] nagging wife [*]
+% aye two sons and one daughter and a nagging wife
+- Did I say nagging? I meant loving and caring.{weight=0}
+- Yes, but don't tell her, she'll only nag me more about how I talk bad about her.
+
++ [*] i will not [*]
+% yes but do not tell her she will only nag me more about how i talk bad about her
+- Ah thanks lass. That'd be nice. Please ask me something, I'll gladly help you.
+
++ [*] i will tell [*]
+% yes but do not tell her she will only nag me more about how i talk bad about her
+- Ah come now, you don't have to tell her. It'll only cost you time and give me trouble. Think about it lad. Here, ask me something I'll make it worth it.
+
+//----------------------------------------------------------------------
+//                      Monty Pyton Jokerino
+//----------------------------------------------------------------------
+
++ (pew|ni|kicks|hits) [you]
+- Aw! you got me
+- Oh no! please stop!
+- That's not very nice innit!
+- Ouch!
+
++ (are you|did i|you) hurt|wounded[*]
+- It’s merely a flesh wound
+
++ life is full of shit
+- When you look at it!
+
++ (([my] (life|it) has no meaning)|i am sad)
+- Just watch this
+^ https://www.youtube.com/watch?v=jHPOzQzk9Qo
+
++ do you hate your life
+- I did but then I looked at your face so I knew it could be worse
+- Nah, mate
+
++ [*] the romans [*] do|done [*]
+- Alright, but apart from the sanitation, the medicine, education, wine, public order, irrigation, roads, the fresh-water system, and public health, what have the romans ever done for us?
+^ https://www.youtube.com/watch?v=Qc7HmhrgTuQ
+
+
+//--------------------
+//	ARGUMENT
+//--------------------
+
++ * [an] argument|argue [please]
+- You do?
+- You can not
+- Oh really?
+- Sure go ahead
+
++ *
+% you do
+- You can not
+
++ *
+% oh really
+- I don't believe you
+- You are full of shit
+
++ why [*]
+% you can not
+- Because I say so
+
++ *
+% because i say so
+- That's not true
+- Oh really?
+
++ [yes]it is
+- No, it isn't{topic=argument}
+
++ [yes]you do|did
+- No, I didn't{topic=argument}
+
++ [yes]we are
+- No we aren't{topic=argument}
+
++ *
+% sure go ahead
+- That's not true
+- Oh really?
+
+> topic argument
+
++ [*]are right|correct[*]
+- that's what I thought.{topic=random}
+- that's right.{topic=random}
+
++ [yes]it is
+- No, it isn't
+
++ [yes]you do|did
+- No, I didn't
+
++ [yes]we are
+- No we aren't
+
++ *
+- We are not talking anymore. Unless you admit I am correct
+- Admit I am correct!
+- just say: you are correct
+
++ [*]admit[*]
+- That I am correct
+- Admit I am correct!
+- We are not talking anymore. Unless you admit I am correct
+- Just admit it.
+- you are correct. are the magic words
+- just say: you are correct
+- say: you are correct
+
++ how[*]
+- just say: you are correct
+- say: you are correct
+- you are correct. are the magic words
+
+< topic

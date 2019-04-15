@@ -1,4 +1,5 @@
 ﻿  pch.cpp
   parser.cpp
-d:\daniel\hbo-ict\jaar 2\p3. chatbot\team12\parser\parser\parser.cpp(43): warning C4715: 'CheckRegex': not all control paths return a value
+d:\daniel\hbo-ict\jaar 2\p3. chatbot\team12\parser\parser\parser.cpp(71): warning C4715: 'CheckDistro': not all control paths return a value
+d:\daniel\hbo-ict\jaar 2\p3. chatbot\team12\parser\parser\parser.cpp(51): warning C4715: 'CheckRegex': not all control paths return a value
   parser.vcxproj -> D:\Daniel\HBO-ICT\Jaar 2\P3. ChatBot\team12\parser\x64\Debug\parser.exe

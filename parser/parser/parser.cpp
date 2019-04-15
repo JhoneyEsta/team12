@@ -18,22 +18,20 @@ size_t stringCount(const std::string& referenceString, const std::string& subStr
 #pragma region RegEx_Strings
 enum NamesRegex { eTitle, eType, eSuspended, eEpisode, eYear, eCountry, eActors, eReleaseDate, eGenre, eRating, eUncredited, eVoice, eArchiveFootage, eAsPerson };
 
-std::string Title = "\\\"?((.+)\\\"|.+)\\s(\\((\\d{4})|\\([?]{4}|\\((\\d{4}\\/[IVX]{1,7}))\\)";
+std::string Title = "\\\"?((.+)\\\"|.+)\\s(\\((\\d{4}\\/\\w+|[?]{4}\\/\\w+|[?]{4}|\\d{4}))\\)";
 std::string Type = "\\((TV|V|VG)\\)";
 std::string Suspended = "\\{\\{(SUSPENDED)\\}\\}";
-std::string Episode = "(\\{(((.+)\\s\\(\\#(\\d+)\\.(\\d+)\\))|(\\((\\d+\\-\\d+\\-\\d+)\\))|(\\(\\#(\\d+)\\.(\\d+)\\))|(.+))\\})";
+std::string Episode = "(\\{(((.+)\\s\\(\\#(\\d+)\\.(\\d+)\\))|(\\((\\d+\\-\\d+\\-\\d+)\\))|(\\(\\#(\\d+)\\.(\\d+)\\))|(.+)(\\((V|TV|VG)\\)))\\})";
 std::string Year = "\\t(\\d{4}|[?]{4})(-(\\d{4}|[?]{4}))?";
-std::string Country = "\\t(\\S+(\\s\\S+(\\s\\S+(\\s\\S+)?)?)?)$";
-std::string Actors = "(.+)\\t((\\\"(.+)\\\"|.+))\\s\\((\\d{4}\\/\\w+|[?]{4}\\/\\w+|[?]{4}|\\d{4})\\)\\s+(\\((V|TV|VG)\\))?(\\s+)?(\\((uncredited)\\))?(\\s+)?(\\{(((.+)\\s\\((.+)\\))|(\\((\\d+-\\d+-\\d+)\\))|(\\((#\\d+.+)\\))|(.+))\\})?(\\s+)?(\\((.+)\\))?(\\s+)?(\\[(.+)\\])?(\\s+)?(\\<\\d+\\>)?$"; 
-std::string ReleaseDate = "\\t(\\w+):(\\w+\\s\\d{4}|\\d{1,2}\\s\\w+\\s\\d{4}|\\d{4})(\\t(\\(.+\\)))?";
+std::string Country = "\\t(\\S+(\\s\\S+(\\s\\S+(\\s\\S+(\\s\\S+)?)?)?)?)$";
+std::string Actors = "(.+)\\t((\\\"(.+)\\\"|.+))\\s\\((\\d{4}\\/\\w+|[?]{4}\\/\\w+|[?]{4}|\\d{4})\\)\\s+(\\((V|TV|VG)\\))?(\\s+)?(\\((uncredited)\\))?(\\s+)?(\\{(((.+)\\s\\(\\#(\\d+)\\.(\\d+)\\))|(\\((\\d+\\-\\d+\\-\\d+)\\))|(\\(\\#(\\d+)\\.(\\d+)\\))|(.+))(\\((V|TV|VG)\\))?\\})?(\\s+)?(\\((.+)\\))?(\\s+)?(\\[(.+)\\])?((\\s+)(\\<\\d+\\>))?$";
+std::string ReleaseDate = "\\t(\\w.+):\\s*(\\w+\\s\\d{4}|\\d{1,2}\\s\\w+\\s\\d{4}|\\d{4})(\\s\\((\\w+)\\))?(\\s\\((\\w+)\\))?(\\s\\((\\w+)\\))?";
 std::string Genre = "\\t(\\w+[-]?\\w+)";
-std::string Rating = "(\\s+)?(\\S+)\\s+(\\S+)\\s+(\\S+)\\s+(.+)\\((\\d+)\\)";
+std::string Rating = "(\\S)(\\S)(\\S)(\\S)(\\S)(\\S)(\\S)(\\S)(\\S)(\\S)\\s+(\\d+)\\s+(\\d{1,2}\\.\\d)\\s+(.+)(\\((\\d{4}\\/\\w+|[?]{4}\\/\\w+|[?]{4}|\\d{4}))\\)";
 std::string Uncredited = "\\((uncredited)\\)";
 std::string Voice = "\\((voice)\\)";
 std::string Archive = "(also\\s)?(archive\\s?footage)";
-std::string AsPerson = "\\((as\\s?.+)\\)";
-
-//country.old = "\\t((\\w+[-.]?)\\s?){1,5}\\n";
+std::string AsPerson = "\\((as\\s.+)\\)";
 
 NamesRegex CheckRegex(std::string const& inString) {
 	if (inString == Title) return eTitle;
@@ -46,7 +44,6 @@ NamesRegex CheckRegex(std::string const& inString) {
 	if (inString == ReleaseDate) return eReleaseDate;
 	if (inString == Genre) return eGenre;
 	if (inString == Rating) return eRating;
-	if (inString == Rating) return eRating;
 	if (inString == Uncredited) return eUncredited;
 	if (inString == Voice) return eVoice;
 	if (inString == Archive) return eArchiveFootage;
@@ -55,6 +52,25 @@ NamesRegex CheckRegex(std::string const& inString) {
 
 #pragma endregion RegEx_Strings
 
+#pragma region Distro_Ratings
+enum Distribution { eDot, e0, e1, e2, e3, e4, e5, e6, e7, e8, e9,eStar};
+
+Distribution CheckDistro(std::string const& inString) {
+	if (inString == ".") return eDot;
+	if (inString == "0") return e0;
+	if (inString == "1") return e1;
+	if (inString == "2") return e2;
+	if (inString == "3") return e3;
+	if (inString == "4") return e4;
+	if (inString == "5") return e5;
+	if (inString == "6") return e6;
+	if (inString == "7") return e7;
+	if (inString == "8") return e8;
+	if (inString == "9") return e9;
+	if (inString == "*") return eStar;
+}
+#pragma endregion Distro_Ratings
+
 int main() {
 	std::string inputFileName;
 	std::string outputFileName;
@@ -62,19 +78,24 @@ int main() {
 	std::list<std::string> regexList;
 
 	//enum with output choices
-	enum outputFilename { actresses, actors, movies, countries, genres, releasedates, ratings};
-//							0			1		2		3			4		5			6
-	switch (3)
+	enum outputFilename { actresses, actors1, actors2, movies, countries, genres, releasedates, ratings};
+//							0			1		2		3			4		5			6			7
+	switch (2)
 	{
 	case actresses:
 		inputFileName = "actresses.list"; //input
 		outputFileName = "actresses.csv"; //output
-		regexList = { Actors,Uncredited,Voice,Archive,AsPerson };
+		regexList = { Actors,AsPerson,Uncredited,Voice,Archive };
 		break;
-	case actors:
-		inputFileName = "actors.list"; 
-		outputFileName = "actors.csv"; 
-		regexList = { Actors,Uncredited,Voice,Archive,AsPerson };
+	case actors1:
+		inputFileName = "actors1.list"; 
+		outputFileName = "actors1.csv"; 
+		regexList = { Actors,AsPerson,Uncredited,Voice,Archive };
+		break;
+	case actors2:
+		inputFileName = "actors2.list";
+		outputFileName = "actors2.csv";
+		regexList = { Actors,AsPerson,Uncredited,Voice,Archive };
 		break;
 	case movies:
 		inputFileName = "movies.list"; 
@@ -99,7 +120,7 @@ int main() {
 	case ratings:
 		inputFileName = "ratings.list"; 
 		outputFileName = "ratings.csv"; 
-		regexList = { Rating };
+		regexList = { Rating,Type,Episode };
 		break;
 	default:
 		break;
@@ -111,8 +132,8 @@ int main() {
 
 	std::string line;
 	std::smatch match;
-	std::string seperator = "; ";
-	std::string name;
+	std::string seperator = ";";
+	std::string name = "Lago, Fábio";
 
 	//main
 	int lineCount = 0;
@@ -140,10 +161,56 @@ int main() {
 					switch (CheckRegex(regX))
 					{
 					case eRating:
-						if (match.str(3) != "") { output += match.str(3) + seperator; } //Votes
-						if (match.str(4) != "") { output += match.str(4) + seperator; } //Rating
-						if (match.str(5) != "") { output += match.str(5) + seperator; } //Title
-						if (match.str(6) != "") { output += match.str(6) + seperator; } //Year
+						//Distribution of the votes
+						for (int i = 1; i < 11; i++)
+						{
+							switch (CheckDistro(match.str(i)))
+							{
+							case eDot:
+								output += "0%" + seperator;
+								break;
+							case e0:
+								output += "1-9%" + seperator;
+								break;
+							case e1:
+								output += "10-19%" + seperator;
+								break;
+							case e2:
+								output += "20-29%" + seperator;
+								break;
+							case e3:
+								output += "30-39%" + seperator;
+								break;
+							case e4:
+								output += "40-49%" + seperator;
+								break;
+							case e5:
+								output += "50-59%" + seperator;
+								break;
+							case e6:
+								output += "60-69%" + seperator;
+								break;
+							case e7:
+								output += "70-79%" + seperator;
+								break;
+							case e8:
+								output += "80-89%" + seperator;
+								break;
+							case e9:
+								output += "80-89%" + seperator;
+								break;
+							case eStar:
+								output += "100%" + seperator;
+								break;
+							default:
+								output += "Error" + seperator;
+								break;
+							}
+						}
+						output += match.str(11) + seperator; //Votes
+						output += match.str(12) + seperator; //Rating
+						output += match.str(13) + seperator; //Title
+						output += match.str(15) + seperator; //Year
 						break;
 					case eTitle:
 						//Title
@@ -173,7 +240,7 @@ int main() {
 					case eEpisode:
 						if (match.str(2) != "") {
 							//Episode Name
-							if (match.str(4) != "" | match.str(12) != "")
+							if ((match.str(4) != "" | match.str(12) != "")& match.str(12) != "{SUSPENDED}")
 								output += match.str(4) + match.str(12) + seperator;
 							else
 								output += "NULL" + seperator;
@@ -200,33 +267,31 @@ int main() {
 					case eCountry:
 						output += match.str(1) + seperator;
 						break;
-					case eActors:
-						//Actor Name
+					case eActors: //Actor Name
 						if (match.str(1) != "\t\t") {
 							name = match.str(1);
 							output += name + seperator;
 						}
-						//No name print previous one (more than 1 movie)
-						else output += name + seperator;
-
+						else { //No name print previous one (more than 1 movie)
+							output += name + seperator;
+						}
 						// Movie name
-						if (match.str(4) != "") output += match.str(4) + seperator;
-						else output += match.str(3) + seperator;
-
+						if (match.str(4) != "") {
+							output += match.str(4) + seperator;
+						}
+						else { output += match.str(3) + seperator; }
 						//Year
-						if (match.str(5) != "") output += match.str(5) + seperator;
-						else output += "NULL" + seperator;
-
+						if (match.str(5) != "") { output += match.str(5) + seperator; }
+						else { output += "NULL" + seperator; }
 						//Type (TV/V/VG)
 						if (match.str(7) != "") {
-							if (match.str(7) == "VG") output += "Video Game" + seperator;
-							else if (match.str(7) == "V") output += "Video" + seperator;
-							else if (match.str(7) == "TV") output += "TV Show" + seperator;
+							if (match.str(7) == "VG") { output += "Video Game" + seperator; }
+							else if (match.str(7) == "V") { output += "Video" + seperator; }
+							else if (match.str(7) == "TV") { output += "TV Show" + seperator; }
 						}
-						else
-							output += "NULL" + seperator; 
+						else { output += "NULL" + seperator; }
 						//Episode
-						if (match.str(12) != "") {
+						if (match.str(12) != "" & match.str(12) != "{SUSPENDED}") {
 							if (match.str(21) != "") { // (#1.1)
 								output += "NULL" + seperator;
 								output += match.str(21) + seperator;
@@ -247,25 +312,26 @@ int main() {
 								output += "NULL" + seperator;
 								output += "NULL" + seperator;
 							}
-						}//if it isn't a tv show create the cells with a Null value. 
+						}
 						else {
 							output += "NULL" + seperator;
 							output += "NULL" + seperator;
 							output += "NULL" + seperator;
 						}
 						// [Role actor / actress plays]
-						if (match.str(29) != "") 
-							output += match.str(29) + seperator;
-						else 
-							output += "NULL" + seperator;
-						break;					
-					case eGenre:
+						if (match.str(31) != "") {
+							output += match.str(31) + seperator;
+						}
+						else { output += "NULL" + seperator; }
+
+					break;					case eGenre:
 						if (match.str() != "") output += match.str(1) + seperator;
 						break;
 					case eReleaseDate:
 						output += match.str(1) + seperator;//Country
 						output += match.str(2) + seperator;//Date
-						output += match.str(4) + seperator;//Location
+						if(match.str(4) !="") output += match.str(4) + match.str(6)+ match.str(8)+ seperator;//Location(s)
+						else output += "NULL" + seperator;
 						break;
 					case eUncredited:
 						if (match.str(1) != "")  output += "1" + seperator; 
